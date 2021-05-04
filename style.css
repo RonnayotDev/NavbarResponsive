@@ -1,0 +1,105 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    cursor: pointer;
+}
+.ham-burger{
+    display: none;
+}
+.links a{
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.links a:hover{
+    transform: scale(1.2);
+    transition: all 0.25 ease-out;
+}
+@media (max-width:767px){
+     .navbar .links{
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        width: 100%;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        padding:10px;
+        overflow: hidden;
+        max-height: 0px;
+        transition: all 300ms;
+    }
+    .navbar.active .links{
+        max-height: 500px;
+    }
+    .links a{
+        padding: 20px 10px;
+    }
+    .links a:hover{
+        transform: none;
+        transition:none;
+    }
+    .ham-burger{
+        position: relative;
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .ham-burger span{
+        display: block;
+        position: absolute;
+        left: 50%;
+        width: 75%;
+        height: 2px;
+        background: white;
+        transform: translate(-50%,-50%);
+        transition: all 300ms;
+    }
+    .ham-burger span:nth-child(1){
+        top: 20%;
+    }
+    .ham-burger span:nth-child(2){
+        top: 50%;
+    }
+    .ham-burger span:nth-child(3){
+        top: 80%;
+    }
+    .navbar.active .ham-burger span:nth-child(1){
+        top: 50%;
+        transform: translate(-50%,-50%) rotate(45deg);
+    }
+    .navbar.active .ham-burger span:nth-child(2){
+       display: none;
+    }
+    .navbar.active .ham-burger span:nth-child(3){
+        top: 50%;
+        transform: translate(-50%,-50%) rotate(-45deg);
+     }
+    
+    
+}
